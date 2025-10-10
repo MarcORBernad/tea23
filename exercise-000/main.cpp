@@ -10,7 +10,14 @@ int main(int argc, char **argv) {
      * it is much more convenient than std::cout and printf
      * More info at https://fmt.dev/latest/api.html
      */
-    fmt::print("Hello, {}!\n", tea::PROJECT_NAME);
+    //fmt::print("Hello, {}!\n", tea::PROJECT_NAME);
+    fmt::print("Anzahl Argumente (argc): {}\n", argc);
+
+    for (size_t i = 0; i < argc; i++)
+    {
+        fmt::print("argv[{}]: {} (Adresse: {})\n", i, argv[i], fmt::ptr(&argv[i]));
+    }
+    
 
     /* INSERT YOUR CODE HERE */
 
