@@ -21,5 +21,10 @@ int main(int argc, char **argv) {
     fmt::print("x: {}, Adresse: {}\n", x, fmt::ptr(&x));
     fmt::print("p: {}, Adresse: {}\n", *p, fmt::ptr(p));
 
+    // Part 2
+    double* d = new double(3.1415);
+    fmt::println("Wert: {}", *d);
+    delete d;
+
     return 0; /* exit gracefully*/
 }
