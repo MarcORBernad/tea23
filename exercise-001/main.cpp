@@ -10,9 +10,15 @@ int main(int argc, char **argv) {
      * it is much more convenient than std::cout and printf
      * More info at https://fmt.dev/latest/api.html
      */
-    fmt::print("Hello, {}!\n", tea::PROJECT_NAME);
+    // fmt::print("Hello, {}!\n", tea::PROJECT_NAME);
 
     /* INSERT YOUR CODE HERE */
+    int globalVar = 1;
+    int static staticVar = 2;
+    int const constVar = 3;
+    fmt::print("globalVar: {}, Adresse: {}\n", globalVar, fmt::ptr(&globalVar));
+    fmt::print("globalVar: {}, Adresse: {}\n", staticVar, fmt::ptr(&staticVar));
+    fmt::print("globalVar: {}, Adresse: {}\n", constVar, fmt::ptr(&constVar));
 
     return 0; /* exit gracefully*/
 }
