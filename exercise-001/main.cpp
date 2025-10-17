@@ -7,6 +7,11 @@ int globalVar = 1;
 int static staticGlobalVar = 2;
 int const constGlobalVar = 3;
 
+void foo() 
+{ 
+    fmt::print("Hello from foo!\\n"); 
+}
+
 int main(int argc, char **argv) {
 
     /**
@@ -16,19 +21,20 @@ int main(int argc, char **argv) {
      */
     // fmt::print("Hello, {}!\n", tea::PROJECT_NAME);
 
+    /* INSERT YOUR CODE HERE */
     int localVar = 4;
     int static localStaticVar = 5;
     int const localConstVar = 6;
     int* heapVar = new int(3);
 
-    /* INSERT YOUR CODE HERE */
     fmt::print("globalVar: {}, Adresse: {}\n", globalVar, fmt::ptr(&globalVar));
     fmt::print("staticVar: {}, Adresse: {}\n", staticGlobalVar, fmt::ptr(&staticGlobalVar));
     fmt::print("constVar: {}, Adresse: {}\n", constGlobalVar, fmt::ptr(&constGlobalVar));
     fmt::print("localVar: {}, Adresse: {}\n", localVar, fmt::ptr(&localVar));
     fmt::print("localStaticVar: {}, Adresse: {}\n", localStaticVar, fmt::ptr(&localStaticVar));
     fmt::print("localConstVar: {}, Adresse: {}\n", localConstVar, fmt::ptr(&localConstVar));
-    fmt::print("heapVar: {}, Adresse: {}", fmt::ptr(&heapVar), fmt::ptr(heapVar));
+    fmt::print("heapVar: {}, Adresse: {}\n", fmt::ptr(&heapVar), fmt::ptr(heapVar));
+    fmt::print("Adresse von foo: {}\n", fmt::ptr(&foo));
 
     delete heapVar;
 
