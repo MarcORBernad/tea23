@@ -38,5 +38,16 @@ int main(int argc, char **argv) {
 
     delete heapVar;
 
+    /*
+    Fazit
+    Bereich Adresse                         Read/Write  Speicherart
+    Stack   0x78fd915e1d9c                              RAM
+    Heap    0x5dbd539f3340                              RAM
+    .bss    0x5db29a8d06c   Daten Segment   R/W         RAM
+    .data   0x5db29a8d058   Daten Segment   R/W         Flash->RAM
+    .rodata 0x5db29a8b348   Daten Segment   R           "Flash"
+    .Text   0x5db29a85980                               Flash
+    */
+
     return 0; /* exit gracefully*/
 }
