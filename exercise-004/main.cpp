@@ -4,6 +4,12 @@
 #include "CLI/CLI.hpp"
 #include "config.h"
 
+#include "image.h"
+#include <opencv2/core.hpp>
+#include <opencv2/imgcodecs.hpp>
+#include <opencv2/imgproc.hpp>
+
+
 auto main(int argc, char **argv) -> int
 {
     /**
@@ -27,9 +33,15 @@ auto main(int argc, char **argv) -> int
      * More info at https://fmt.dev/latest/api.html
      */
     fmt::print("Hello, {}!\n", app.get_name());
-
     /* INSERT YOUR CODE HERE */
-
-
+    fmt::print("width: {}\nheight: {}\n", image_width, image_height);
+    
+    std::vector <uchar> v(image, image + (image_width * image_height));
+    cv::Mat img = cv::imdecode(v, cv::IMREAD_COLOR);
+    fmt::print("{}", img.channels());
+    
+    std::string output_filename = fmt::format("{}/{}", "assets", "image_edited.jpg");
+    cv::imwrite(output_filename, img);
+    
     return 0; /* exit gracefully*/
 }
